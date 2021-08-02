@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "203202300144344131433",
+      "name": "Thanh nguyễn",
+      "price": "377511",
+      "category": "Danh mục A"
+    },
+    {
+      "id": "34312001310412001413414",
+      "name": "sale124",
+      "price": "123",
+      "category": "Danh mục A"
+    },
+    {
+      "id": "31433143330212400004202",
+      "name": "Thanh nguyễn",
+      "image": {
+        "0": {}
+      },
+      "price": "123456",
+      "category": "Danh mục A"
+    }
+  ],
+  "category": [],
+  "users": [
+    {
+      "email": "thanhsaker2000@gmail.com",
+      "password": "$2a$10$aoubekV97aI3F900bV5UuuWXceCEIpiDkYfnE34Yd3V70PRrJ4Eyy",
+      "name": "Muzik Bờm",
+      "id": 1
+    },
+    {
+      "email": "admin12@gmail.com",
+      "password": "$2a$10$2JPHvD37lINoqJDsFYVmq.yBLsTa6ENo1mfjQ6KZsW6fGhKgYX6RW",
+      "name": "ad a",
+      "id": 2
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$NuOZfPZsi3moc92WQBzs.OeAhYsbZYXNQvh5zHV64ZbhmUwlLv2M6",
+      "name": "Thanh nguyễn",
+      "id": 3
+    }
+  ]
+}
