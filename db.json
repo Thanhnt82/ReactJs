@@ -1,28 +1,84 @@
 {
   "products": [
     {
-      "id": "203202300144344131433",
-      "name": "Thanh nguyễn",
-      "price": "377511",
-      "category": "Danh mục A"
+      "id": 1,
+      "name": "Dâu Tây",
+      "price": "55.000",
+      "category": "Bánh kẹo"
     },
     {
-      "id": "34312001310412001413414",
-      "name": "sale124",
-      "price": "123",
-      "category": "Danh mục A"
+      "id": 2,
+      "name": "Ổi",
+      "price": "8.000",
+      "category": "Rau-củ-quả"
     },
     {
-      "id": "31433143330212400004202",
-      "name": "Thanh nguyễn",
-      "image": {
-        "0": {}
-      },
-      "price": "123456",
-      "category": "Danh mục A"
+      "id": 3,
+      "name": "Hoa hồng",
+      "price": "11.000",
+      "category": "Lương Thực"
+    },
+    {
+      "name": "Bim Bim oshi",
+      "price": "10.000",
+      "category": "Bánh kẹo",
+      "id": 4
+    },
+    {
+      "name": "Chè Thái Nguyên",
+      "price": "15.000",
+      "category": "Thực phẩm",
+      "id": 5
+    },
+    {
+      "name": "Cafe hòa tan",
+      "price": "110.000",
+      "category": "Cafe",
+      "id": 6
+    },
+    {
+      "name": "Cafe 3in1",
+      "price": "65.000",
+      "category": "Bánh kẹo",
+      "id": 7
+    },
+    {
+      "name": "Bàn chải đánh răng",
+      "price": "14.000",
+      "category": "Đồ dùng cá nhân",
+      "id": 8
     }
   ],
-  "category": [],
+  "category": [
+    {
+      "id": 3,
+      "name": "Bánh kẹo"
+    },
+    {
+      "name": "Hoa Quả",
+      "id": 5
+    },
+    {
+      "name": "Đồ dùng cá nhân",
+      "id": 6
+    },
+    {
+      "name": "Thực phẩm",
+      "id": 7
+    },
+    {
+      "name": "Lương Thực",
+      "id": 8
+    },
+    {
+      "name": "Cafe",
+      "id": 9
+    },
+    {
+      "name": "Rau-củ-quả",
+      "id": 10
+    }
+  ],
   "users": [
     {
       "email": "thanhsaker2000@gmail.com",

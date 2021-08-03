@@ -1,7 +1,7 @@
 import { set } from 'lodash';
 import React, { useState } from 'react';
 import { useForm  } from "react-hook-form";
-import {Link, Redirect} from "react-router-dom";
+import {Link, Redirect, useHistory} from "react-router-dom";
 import {signin, signup} from "../../api/authAPI";
 import { authenticate } from '../../auth';
 import { isAutehnticate } from '../../auth';
@@ -10,7 +10,6 @@ const Signin = () => {
   const { register , handleSubmit , formState:{errors} } = useForm();
   const [error,setError] = useState("");
   const [success,setSuccess] = useState(false);
-  
   const onSubmit = async (user) => {
   try {
     const { data } = await signin(user);
@@ -28,7 +27,7 @@ const Signin = () => {
         if(id==1){
             return <Redirect to="/admin"/>
         }else{
-            return <Redirect to="/products" />
+            return <Redirect to="/trangchu" />
         }
     }
 

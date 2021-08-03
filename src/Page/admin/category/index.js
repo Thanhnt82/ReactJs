@@ -6,7 +6,7 @@ export default function Category(props) {
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 className="h2">Quản lý danh mục</h1>
         <div className="btn-toolbar mb-2 mb-md-0">
-          <Link className="btn btn-sm btn-outline-primary" to="/category/add">
+          <Link className="btn btn-sm btn-outline-primary" to="category/add">
             Thêm Danh mục
           </Link>
         </div>
@@ -21,21 +21,22 @@ export default function Category(props) {
             </tr>
           </thead>
           <tbody>
-            {props.Category.map((items, index) => (
+            {props.category.map((items, index) => (
               <tr key={index}>
-                <td>{index + 1}</td>
+                <td>{items.id}</td>
                 <td>{items.name}</td>
                 <td>
-                  <button className="btn btn-danger btn-sm"
-                    onClick={() => props.onRemoveCate(items.id)}
-                  >
-                    Xóa </button>
-                  <Link
-                    to={`/products/${items.id}/edit`}
+                <Link
+                    to={`category/${items.id}/edit`}
                     className="btn btn-primary ms-1 btn-sm"
                   >
                     Sửa
                   </Link>
+                  <button className="btn btn-danger btn-sm"
+                    onClick={() => props.onRemoveCate(items.id)}
+                  >
+                    Xóa </button>
+
                 </td>
               </tr>
             ))}

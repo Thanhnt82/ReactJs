@@ -10,12 +10,12 @@ const AddProductForm = (props) => {
     const history = useHistory();
     const onSubmit = (data) =>{
         const product = {
-            id: Math.random().toString(5).substring(2),
             ...data
           };
           props.onAdd(product);
-          history.push("/products");
+          history.push("/admin/products");
     };
+
     return (
       <>
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -33,7 +33,7 @@ const AddProductForm = (props) => {
           <span className="d-block mt-2 text-danger">Không được bỏ trống</span>
         )}
       </div>
-      <div className="mb-3">
+      {/* <div className="mb-3">
         <label className="form-label">Ảnh sản phẩm</label>
         <input
           type="file"
@@ -43,7 +43,7 @@ const AddProductForm = (props) => {
         {errors.image && (
           <span className="d-block mt-2 text-danger">Không được bỏ trống</span>
         )}
-      </div>
+      </div> */}
       <div className="mb-3">
         <label className="form-label">Giá sản phẩm</label>
         <input type="number" className="form-control" {...register("price")} />
@@ -51,8 +51,9 @@ const AddProductForm = (props) => {
       <div className="mb-3">
         <label className="form-label">Danh mục</label>
         <select className="form-control" {...register("category")}>
-          <option value="Danh mục A">Danh mục A</option>
-          <option value="Danh mục B">Danh mục B</option>
+        {props.category.map((items) => (
+          <option>{items.name}</option>
+        ))}     
         </select>
       </div>
       <button className="btn btn-primary" type="submit">

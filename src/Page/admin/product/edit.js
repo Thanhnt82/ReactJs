@@ -33,7 +33,7 @@ const EditProductForm = (props) => {
     };
     console.log(product);
     props.onEdit(product);
-    history.push("/product");
+    history.push("/admin/products");
   };
 
   return (
@@ -68,8 +68,9 @@ const EditProductForm = (props) => {
           <select className="form-control"
           defaultValue={product.category}
           {...register("category")}>
-            <option value="Danh mục A">Danh mục A</option>
-            <option value="Danh mục B">Danh mục B</option>
+              {props.category.map((items) => (
+          <option>{items.name}</option>
+        ))} 
           </select>
         </div>
         <button className="btn btn-primary" type="submit">

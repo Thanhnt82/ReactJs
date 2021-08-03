@@ -10,19 +10,19 @@ export default function Nav() {
           <ul className="nav flex-column">
             <li className="nav-item">
 
-              <NavLink className="nav-link active"  to="/" activeClassName="acctive" exact>
+              <NavLink className="nav-link active"  to="/admin" activeClassName="acctive" exact>
                 <span data-feather="home" />
                 Dashboard
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/category" activeClassName="acctive" exact>
+              <NavLink className="nav-link" to="/admin/category" activeClassName="acctive" exact>
                 <span data-feather="users" />
                 Danh Mục
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/products" activeClassName="acctive" exact>
+              <NavLink className="nav-link" to="/admin/products" activeClassName="acctive" exact>
                 <span data-feather="shopping-cart" />
                 Sản Phẩm
               </NavLink>

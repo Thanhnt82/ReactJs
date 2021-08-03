@@ -8,14 +8,13 @@ const AddCategory = (props) => {
         formState: { errors }
         } = useForm();
     const history = useHistory();
-    const onSubmitCate = (data) =>{
-        const Category = {
-            id: Math.random().toString(5).substring(2),
-            ...data
+    const onSubmitCate = (dataCate) =>{
+        const AddCate = {
+            ...dataCate
           };
-          props.onAddCate(Category);
-          history.push("/category");
-    };
+          props.onAddCate(AddCate);
+          history.push("/admin/category");
+        };
     return (
       <>
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
