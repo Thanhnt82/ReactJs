@@ -52,20 +52,21 @@ const SanPham = (props) => {
                                     <div id="shop-1" class="tab-pane active">
                                         <div class="row">
                                             {props.Products.map((items) => (
-                                                <div class="col-md-4 col-sm-6" style= {{width: '24.933333%,'}} >
+                                                <div class="col-md-3 col-sm-6" style= {{width: '24.933333%,'}} >
                                                     <article class="list-product">
                                                         <div class="img-block">
                                                             <Link
                                                                 to={`sanphamchitiet/${items.id}`}
                                                                 class="thumbnail"
                                                             >
-                                                                <img class="first-img" src="assets/images/product-image/organic/product-1.jpg" alt="" />
-                                                                <img class="second-img" src="assets/images/product-image/organic/product-1.jpg" alt="" />
+                                                                <img class="first-img" src={items.image} alt="" />
+                                                                <img class="second-img" src="../assets/images/logo/logo-electronic.jpg" alt="" />
+                                                                <img class="second-img" src="../assets/images/logo/logo.jpg" alt="" />
                                                             </Link>
                                                             <div class="quick-view">
-                                                                <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                                                                <Link class="quick_view" to={`sanphamchitiet/${items.id}`} data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
                                                                     <i class="ion-ios-search-strong"></i>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                         <ul class="product-flag">
@@ -83,7 +84,7 @@ const SanPham = (props) => {
                                                             </div>
                                                             <div class="pricing-meta">
                                                                 <ul>
-                                                                    <p>Giá : <li class="old-price">{items.price} đồng</li></p>
+                                                                    <p>Giá : <li class="current-price">{items.price} Đồng</li></p>
                                                                     {/* <li class="current-price">€34.21</li>
                                                                     <li class="discount-price">-5%</li> */}
                                                                 </ul>
@@ -91,7 +92,7 @@ const SanPham = (props) => {
                                                         </div>
                                                         <div class="add-to-link">
                                                             <ul>
-                                                                <li class="cart"><a class="cart-btn" href="#">ADD TO CART </a></li>
+                                                                <li class="cart"><a class="cart-btn" href="#">ADD TO CART</a></li>
                                                                 <li>
                                                                     <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                                                                 </li>

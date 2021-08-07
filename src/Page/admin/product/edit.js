@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
-import { get } from "../../../api/productAPI";
-
+import { get,remove,update } from "../../../api/productAPI";
+import firebase from "../../../firebase";
+import swal from "sweetalert";
 const EditProductForm = (props) => {
   const [product, setProduct] = useState({});
   const {
@@ -20,22 +21,30 @@ const EditProductForm = (props) => {
     const getProduct = async () => {
       const { data } = await get(id);
       setProduct(data);
+      delete(data.image);
       reset(data);
+      console.log(data);
     };
     getProduct();
   }, []);
 
   const onSubmit = (data) => {
-    console.log("form edit", data);
-    const product = {
-      id: id,
-      ...data
-    };
+    let file =data.image[0];
+    let storageRef = firebase.storage().ref(`images/${file.name}`);
+    storageRef.put(file).then(function(){
+        storageRef.getDownloadURL().then((url)=>{
+            console.log(url)
+            const product = {
+                ...data,
+                image: url
+            }
+            console.log(product);
+        props.onEdit(product);
+        })
+    })
     console.log(product);
-    props.onEdit(product);
     history.push("/admin/products");
   };
-
   return (
     <>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -46,7 +55,7 @@ const EditProductForm = (props) => {
           <label className="form-label">Tên sản phẩm</label>
           <input
             type="text"
-            defaultValue={product.name}
+            id="upload"
             className="form-control"
             {...register("name", { required: true })}
           />
@@ -55,6 +64,17 @@ const EditProductForm = (props) => {
           )}
         </div>
         <div className="mb-3">
+        <label className="form-label">Ảnh sản phẩm</label>
+        <input
+          type="file"
+          className="form-control"
+          {...register("image", { required: true })}
+        />
+        {errors.image && (
+          <span className="d-block mt-2 text-danger">Không được bỏ trống</span>
+        )}
+      </div>
+        <div className="mb-3">
           <label className="form-label">Giá sản phẩm</label>
           <input
             type="number"
@@ -62,6 +82,10 @@ const EditProductForm = (props) => {
             className="form-control"
             {...register("price")}
           />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Mô tả : </label><br></br>
+          <textarea className="form-control" rows="4" cols="100" {...register("description")}>{product.description}</textarea>
         </div>
         <div className="mb-3">
           <label className="form-label">Danh mục</label>

@@ -35,7 +35,7 @@ const SanPhamChiTiet = (props) => {
                             <div class="product-details-img product-details-tab">
                                 <div class="zoompro-wrap zoompro-2">
                                     <div class="zoompro-border zoompro-span">
-                                        <img class="zoompro" src="../assets/images/product-image/organic/product-11.jpg" data-zoom-image="../assets/images/product-image/organic/zoom/1.jpg" alt="" />
+                                        <img class="zoompro" src={product.image} data-zoom-image="../assets/images/product-image/organic/zoom/1.jpg" alt="" />
                                     </div>
                                 </div>
                                 {/* <div id="gallery" className="product-dec-slider-2">
@@ -73,17 +73,17 @@ const SanPhamChiTiet = (props) => {
                                         <li class="old-price not-cut">Giá : {product.price} đ</li>
                                     </ul>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
+                                <p>Mô tả : {product.description}</p>
                                 <div class="pro-details-list">
                                     <ul>
-                                        <li>- 0.5 mm Dail</li>
-                                        <li>- Inspired vector icons</li>
-                                        <li>- Very modern style</li>
+                                        <li>- Miễn Phí Vận Chuyển</li>
+                                        <li>- 3 Ngày Trả Hàng / Hoàn Tiền</li>
+                                        <li>- Cam kết 100% hàng chính hãng</li>
                                     </ul>
                                 </div>
                                 <div class="pro-details-quality mt-0px">
                                     <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1"/>
                                     </div>
                                     <div class="pro-details-cart btn-hover">
                                         <a href="#"> + Add To Cart</a>
@@ -143,11 +143,7 @@ const SanPhamChiTiet = (props) => {
                             </div>
                             <div id="des-details1" class="tab-pane">
                                 <div class="product-description-wrapper">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-                                    <p>
-                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo consequat. Duis aute irure dolor in reprehend in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                    </p>
+                                <p>{product.description}</p>
                                 </div>
                             </div>
                             <div id="des-details3" class="tab-pane">
@@ -156,7 +152,7 @@ const SanPhamChiTiet = (props) => {
                                         <div class="review-wrapper">
                                             <div class="single-review">
                                                 <div class="review-img">
-                                                    <img src="assets/images/testimonial-image/1.png" alt="" />
+                                                    <img src={product.image} alt="" />
                                                 </div>
                                                 <div class="review-content">
                                                     <div class="review-top-wrap">

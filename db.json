@@ -1,91 +1,97 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Dâu Tây",
-      "price": "55.000",
-      "category": "Bánh kẹo"
-    },
-    {
-      "id": 2,
-      "name": "Ổi",
-      "price": "8.000",
-      "category": "Rau-củ-quả"
-    },
-    {
-      "id": 3,
-      "name": "Hoa hồng",
-      "price": "11.000",
-      "category": "Lương Thực"
-    },
-    {
-      "name": "Bim Bim oshi",
-      "price": "10.000",
+      "name": "Bim Bim đỏ",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2F1.jpg?alt=media&token=a0a9ba83-112f-40b2-abae-91122a15780f",
+      "price": "7.000",
+      "description": "Sản phẩm siêu ngon",
       "category": "Bánh kẹo",
+      "id": 2
+    },
+    {
+      "name": "Táo",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fproduct-1.jpg?alt=media&token=2bda3868-e2dc-4202-8b51-6f02780e4a2c",
+      "price": "55.000",
+      "description": "Táo to ngon",
+      "category": "Hoa Quả",
       "id": 4
     },
     {
-      "name": "Chè Thái Nguyên",
-      "price": "15.000",
-      "category": "Thực phẩm",
+      "name": "Cam ngọt",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fproduct-10.jpg?alt=media&token=13eae427-6376-4773-b607-a93a71f8aa36",
+      "price": "60.000",
+      "description": "Cam ngon",
+      "category": "Hoa Quả",
       "id": 5
     },
     {
-      "name": "Cafe hòa tan",
-      "price": "110.000",
-      "category": "Cafe",
+      "name": "Dâu Tây",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fproduct-6.jpg?alt=media&token=03448e91-c5b7-4e5b-b500-f3385f042ad3",
+      "price": "150.000",
+      "description": "Dâu Ngion",
+      "category": "Hoa Quả",
       "id": 6
     },
     {
-      "name": "Cafe 3in1",
-      "price": "65.000",
+      "name": "test12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fproduct-4.jpg?alt=media&token=faf4192a-3cf9-4b32-8ed0-9de1810e761b",
+      "price": "1",
+      "description": "1",
       "category": "Bánh kẹo",
       "id": 7
     },
     {
-      "name": "Bàn chải đánh răng",
-      "price": "14.000",
-      "category": "Đồ dùng cá nhân",
-      "id": 8
+      "name": "Cá hồi",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fproduct-16.jpg?alt=media&token=c7422ab6-4f23-4e98-8258-b6d0b4e3160f",
+      "price": "250.000",
+      "description": "Ngon",
+      "category": "Thực phẩm",
+      "id": 9
     }
   ],
   "category": [
     {
-      "id": 3,
-      "name": "Bánh kẹo"
+      "name": "Bánh kẹo",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-5.jpg?alt=media&token=083e698b-a044-40b5-bb6f-37545d94bae4",
+      "id": 3
     },
     {
       "name": "Hoa Quả",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-3.jpg?alt=media&token=f13cc8a0-93e0-4265-ab0d-a47b49c10cca",
       "id": 5
     },
     {
       "name": "Đồ dùng cá nhân",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-2.jpg?alt=media&token=f0adbf93-db58-469c-af28-d2d517ba3fe0",
       "id": 6
     },
     {
       "name": "Thực phẩm",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-2.jpg?alt=media&token=1a407cfe-4bc9-467d-84e3-bf91f20b4a55",
       "id": 7
     },
     {
       "name": "Lương Thực",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-4.jpg?alt=media&token=094f9fef-cafd-43f8-9bc5-6d91397be039",
       "id": 8
     },
     {
       "name": "Cafe",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-8.jpg?alt=media&token=bd5d0e33-a142-4b7e-aacf-1697b57aa417",
       "id": 9
     },
     {
       "name": "Rau-củ-quả",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-1.jpg?alt=media&token=32a3453b-5080-44d2-b1f2-621a5a17e63d",
       "id": 10
+    },
+    {
+      "name": "Bột Giặt",
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-65324.appspot.com/o/images%2Fthumb-6.jpg?alt=media&token=65b4975f-a792-49f7-bdb2-d8dc223bc71c",
+      "id": 11
     }
   ],
   "users": [
-    {
-      "email": "thanhsaker2000@gmail.com",
-      "password": "$2a$10$aoubekV97aI3F900bV5UuuWXceCEIpiDkYfnE34Yd3V70PRrJ4Eyy",
-      "name": "Muzik Bờm",
-      "id": 1
-    },
     {
       "email": "admin12@gmail.com",
       "password": "$2a$10$2JPHvD37lINoqJDsFYVmq.yBLsTa6ENo1mfjQ6KZsW6fGhKgYX6RW",
@@ -96,7 +102,25 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$NuOZfPZsi3moc92WQBzs.OeAhYsbZYXNQvh5zHV64ZbhmUwlLv2M6",
       "name": "Thanh nguyễn",
+      "id": 1
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$Yv20Bb10EIoSWd3L7AQiTOFH5wU4RQJx/kZ92/4exFF4Ldq3zcT3y",
+      "name": "Thanh nguyễn",
       "id": 3
+    },
+    {
+      "email": "admin3@gmail.com",
+      "password": "$2a$10$lOKjtwBsAL.fHCUzdpGEYeEdeUtVE0mxRgteKkehAilPXnxePtYqS",
+      "name": "Muzik Bờm",
+      "id": 4
+    },
+    {
+      "email": "admin@thanhnt82.epizy.com",
+      "password": "$2a$10$w7.Eb2ojJyFckKXSxZWYaOGGdw4hee0Gs0ENpryPT1wntB2J/7rAa",
+      "name": "Muzik Bờm",
+      "id": 5
     }
   ]
 }

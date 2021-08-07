@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+import { PaginatedList } from 'react-paginated-list';
 export default function Product(props) {
   console.log(props);
-  
+  let products = props.Products;
   return (
     <>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -14,37 +15,52 @@ export default function Product(props) {
       </div>
       <div className="table-responsive">
         <table className="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">id</th>
-              <th scope="col">Name</th>
-              <th scope="col">price</th>
-              <th scope="col">category</th>
-              <th scope="col">Hành động</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.Products.map((items, index) => (
-              <tr key={index}>
-                <td>{items.id}</td>
-                <td>{items.name}</td>
-                <td>{items.price}</td>
-                <td>{items.category}</td>
-                <td>
-                <Link
-                    to={`products/${items.id}/edit`}
-                    className="btn btn-primary ms-1 btn-sm"
-                  >
-                    Sửa
-                  </Link>
 
-                  <button className="btn btn-danger btn-sm"
-                    onClick={() => props.onRemove(items.id)}
-                  >
-                    Xóa </button>
-                </td>
-              </tr>
-            ))}
+          <tbody>
+            <PaginatedList
+              list={products}
+              itemsPerPage={5}
+              renderList={(list) => (
+                <>          
+                <thead>
+                <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">price</th>
+                      <th scope="col">category</th>
+                      <th scope="col" >description</th>
+                      <th scope="col" >Hành động</th>
+                </tr>
+              </thead>
+                  {list.map((item, id) => {
+                    return (
+                      <tr>
+                        <td>{item.id}</td>
+                        <td>{item.name}</td>
+                        <td><img src={item.image} alt="" class="img-responsive" style={{width: '200px', height: 'auto'}} /></td>
+                        <td>{item.price}</td>
+                        <td>{item.category}</td>
+                        <td>{item.description}</td>
+                        <td>
+                          <Link
+                            to={`products/${item.id}/edit`}
+                            className="btn btn-primary ms-1 btn-sm"
+                          >
+                            Sửa
+                          </Link>
+
+                          <button className="btn btn-danger btn-sm"
+                            onClick={() => props.onRemove(item.id)}
+                          >
+                            Xóa </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </>
+              )}
+            />
           </tbody>
         </table>
       </div>

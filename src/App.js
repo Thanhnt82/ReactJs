@@ -50,17 +50,17 @@ export default function App() {
       })
   }
   const onHandleAdd = async (items) => {
-    swal({
-      title: "Thêm thành công !",
-      text: "Dữ liệu đang được cập nhật",
-      button: true,
-      // dangerMode: true,
-      icon: "success",
-      timer: 2000
-    });
     try {
       const { data } = await add(items);
       setProducts([...products, data]);
+      swal({
+        title: "Thêm thành công !",
+        text: "Dữ liệu đang được cập nhật",
+        button: true,
+        // dangerMode: true,
+        icon: "success",
+        timer: 2000
+      });
     } catch (error) {
       console.error();
     }
@@ -91,15 +91,44 @@ export default function App() {
     getCategory();
   }, []);
   function onDeleteCate(id) {
-    try {
-      onRemoveCate(id);
-      const newCategory = category.filter((items) => items.id !== id);
-      setCategory(newCategory);
-    } catch (error) {
-      console.log(error);
-    }
+    swal({
+      title: "Bạn có chắc muốn xóa ?",
+      text: "Nếu xóa bạn có thể mất vĩnh viễn dữ liệu",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal({
+            title: "Xóa thành công !",
+            text: "Dữ liệu đang được cập nhật",
+            icon: "success",
+            timer: 2000
+          })
+          onRemoveCate(id);
+          const newCategory = category.filter((items) => items.id !== id);
+          setCategory(newCategory);
+        }
+        else {
+          swal({
+            title: "Xóa thất bại !",
+            text: "Dữ liệu hoàn lại như ban đầu",
+            icon: "error",
+            timer: 2000
+          })
+        }
+      })
   };
   const onHandleAddCate = async (items) => {
+    swal({
+      title: "Thêm thành công !",
+      text: "Dữ liệu đang được cập nhật",
+      button: true,
+      // dangerMode: true,
+      icon: "success",
+      timer: 2000
+    });
     try {
       const { data } = await addCate(items);
       setCategory([...category, data]);
@@ -108,6 +137,12 @@ export default function App() {
     }
   };
   const onHandleEditCate = async (items) => {
+    swal({
+      title: "Cập nhật thành công <3",
+      text: "Dữ liệu mới đang được cập nhật",
+      icon: "success",
+      timer: 2000
+    });
     try {
       const { data } = await updateCate(items);
       console.log("app.js", data);

@@ -1,4 +1,4 @@
-import { isAuthenticated } from "auth";
+import { isAuthenticated } from "../auth";
 import { Redirect, Route } from "react-router-dom";
 const PrivateAdmin = (props) => {
   return (
@@ -13,4 +13,4 @@ const PrivateAdmin = (props) => {
     />
   );
 };
-export default PrivateAdmin;
+export default PrivateAdmin

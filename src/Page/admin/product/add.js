@@ -1,21 +1,31 @@
 import { useForm  } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { add } from "../../../api/productAPI";
+import firebase from '../../../firebase';
+import swal from "sweetalert";
 const AddProductForm = (props) => {
-    //khai báo các kiểu dữ liệu trong useFornm
     const {
     register,
     handleSubmit,
     formState: { errors }
     } = useForm();
     const history = useHistory();
-    const onSubmit = (data) =>{
-        const product = {
-            ...data
-          };
-          props.onAdd(product);
-          history.push("/admin/products");
+    const onSubmit = (data) => {
+      let file =data.image[0];
+      let storageRef = firebase.storage().ref(`images/${file.name}`);
+      storageRef.put(file).then(function(){
+          storageRef.getDownloadURL().then((url)=>{
+              console.log(url)
+              const getProduct = {
+                  ...data,
+                  image: url
+              }
+              console.log(getProduct);
+              props.onAdd(getProduct);
+          })
+      })
+      history.push("/admin/products");
     };
-
     return (
       <>
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -33,7 +43,7 @@ const AddProductForm = (props) => {
           <span className="d-block mt-2 text-danger">Không được bỏ trống</span>
         )}
       </div>
-      {/* <div className="mb-3">
+      <div className="mb-3">
         <label className="form-label">Ảnh sản phẩm</label>
         <input
           type="file"
@@ -43,10 +53,15 @@ const AddProductForm = (props) => {
         {errors.image && (
           <span className="d-block mt-2 text-danger">Không được bỏ trống</span>
         )}
-      </div> */}
+      </div>
       <div className="mb-3">
         <label className="form-label">Giá sản phẩm</label>
-        <input type="number" className="form-control" {...register("price")} />
+        <input type="number" className="form-control" {...register("price", { required: true })} />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Mô Tả</label>
+        {/* <Yamde value={description} handler={setdescription} theme="light" {...register("description")}/> */}
+        <textarea className="form-control" rows="4" cols="100" {...register("description", { required: true })}></textarea>
       </div>
       <div className="mb-3">
         <label className="form-label">Danh mục</label>
@@ -60,7 +75,6 @@ const AddProductForm = (props) => {
         Thêm sản phẩm
       </button>
         </form>
-        
         </>
     )
 }

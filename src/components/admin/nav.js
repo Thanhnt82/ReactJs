@@ -6,10 +6,10 @@ export default function Nav() {
         id="sidebarMenu"
         className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
       >
-        <div className="position-sticky pt-3">
+      <img src="../assets/images/logo/logo-medical.jpg" alt="" style={{marginTop: '-56px'}} />
+           <div className="position-sticky pt-3">
           <ul className="nav flex-column">
             <li className="nav-item">
-
               <NavLink className="nav-link active"  to="/admin" activeClassName="acctive" exact>
                 <span data-feather="home" />
                 Dashboard
@@ -29,14 +29,13 @@ export default function Nav() {
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/signup" activeClassName="acctive" exact>
+              <a className="nav-link" href="/trangchu" activeClassName="acctive" exact>
                 <span data-feather="users" />
-                Đăng kí
-              </NavLink>
+                Quay về trang chủ
+              </a>
             </li>
           </ul>
         </div>
       </nav>
     );
   }
-  
